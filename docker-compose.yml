@@ -7,6 +7,5 @@ services:
      - "8080:8080"
    volumes:
      - ./frontend/app:/app
-     - /frontend/app/node_modules
    working_dir: /app
    command: yarn serve
