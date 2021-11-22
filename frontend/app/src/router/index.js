@@ -21,7 +21,6 @@ const router = new Router({
   routes: [
     layout('Default', [
       route('Dashboard'),
-
       // Pages
       route('UserProfile', null, 'components/profile'),
 

@@ -24,13 +24,13 @@
 
     <v-spacer />
 
-    <default-search class="hidden-sm-and-down" />
+    <!-- <default-search class="hidden-sm-and-down" /> -->
 
     <default-go-home />
 
-    <default-notifications />
+    <!-- <default-notifications /> -->
 
-    <default-account />
+    <!-- <default-account /> -->
   </v-app-bar>
 </template>
 
@@ -42,10 +42,10 @@
     name: 'DefaultBar',
 
     components: {
-      DefaultAccount: () => import(
-        /* webpackChunkName: "default-account" */
-        './widgets/Account'
-      ),
+      // DefaultAccount: () => import(
+      //   /* webpackChunkName: "default-account" */
+      //   './widgets/Account'
+      // ),
       DefaultDrawerToggle: () => import(
         /* webpackChunkName: "default-drawer-toggle" */
         './widgets/DrawerToggle'
@@ -54,14 +54,14 @@
         /* webpackChunkName: "default-go-home" */
         './widgets/GoHome'
       ),
-      DefaultNotifications: () => import(
-        /* webpackChunkName: "default-notifications" */
-        './widgets/Notifications'
-      ),
-      DefaultSearch: () => import(
-        /* webpackChunkName: "default-search" */
-        './widgets/Search'
-      ),
+      // DefaultNotifications: () => import(
+      //   /* webpackChunkName: "default-notifications" */
+      //   './widgets/Notifications'
+      // ),
+      // DefaultSearch: () => import(
+      //   /* webpackChunkName: "default-search" */
+      //   './widgets/Search'
+      // ),
     },
 
     computed: {

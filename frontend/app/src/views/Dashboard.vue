@@ -12,7 +12,7 @@
             :key="`chart-${i}`"
             cols="12"
             md="6"
-            lg="4"
+            lg="6"
           >
             <material-chart-card
               :color="chart.color"
@@ -67,7 +67,7 @@
         </material-stat-card>
       </v-col>
 
-      <v-col
+      <!-- <v-col
         cols="12"
         md="6"
       >
@@ -92,9 +92,9 @@
             />
           </v-card-text>
         </material-card>
-      </v-col>
+      </v-col> -->
 
-      <v-col
+      <!-- <v-col
         cols="12"
         md="6"
       >
@@ -184,7 +184,7 @@
             </v-tab-item>
           </v-tabs-items>
         </material-card>
-      </v-col>
+      </v-col> -->
     </v-row>
   </v-container>
 </template>
@@ -200,18 +200,17 @@
 
   export default {
     name: 'DashboardView',
-
     data: () => ({
       charts: [{
         type: 'Bar',
         color: 'primary',
-        title: 'Website Views',
-        subtitle: 'Last Campaign Performance',
-        time: 'updated 10 minutes ago',
+        title: '上位質問カテゴリ',
+        subtitle: '',
+        time: '',
         data: {
-          labels: ['Ja', 'Fe', 'Ma', 'Ap', 'Mai', 'Ju', 'Jul', 'Au', 'Se', 'Oc', 'No', 'De'],
+          labels: [],
           series: [
-            [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
+            [],
           ],
         },
         options: {
@@ -219,7 +218,7 @@
             showGrid: false,
           },
           low: 0,
-          high: 1000,
+          high: 0,
           chartPadding: {
             top: 0,
             right: 5,
@@ -240,19 +239,19 @@
       }, {
         type: 'Line',
         color: 'success',
-        title: 'Daily Sales',
-        subtitle: '<i class="mdi mdi-arrow-up green--text"></i><span class="green--text">55%</span>&nbsp;increase in today\'s sales',
+        title: '日付別質問数',
+        subtitle: '',
         time: 'updated 4 minutes ago',
         data: {
-          labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
+          labels: [],
           series: [
-            [230, 750, 450, 300, 280, 240, 200, 190],
+            [],
           ],
         },
         options: {
           lineSmooth,
           low: 0,
-          high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          high: 0, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
           chartPadding: {
             top: 0,
             right: 0,
@@ -260,29 +259,29 @@
             left: 0,
           },
         },
-      }, {
-        type: 'Line',
-        color: 'info',
-        title: 'Completed Tasks',
-        subtitle: 'Last Campaign Performance',
-        time: 'campaign sent 26 minutes ago',
-        data: {
-          labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-          series: [
-            [12, 17, 7, 17, 23, 18, 38],
-          ],
-        },
-        options: {
-          lineSmooth,
-          low: 0,
-          high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-          chartPadding: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-          },
-        },
+      // }, {
+      //   type: 'Line',
+      //   color: 'info',
+      //   title: 'Completed Tasks',
+      //   subtitle: 'Last Campaign Performance',
+      //   time: 'campaign sent 26 minutes ago',
+      //   data: {
+      //     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+      //     series: [
+      //       [12, 17, 7, 17, 23, 18, 38],
+      //     ],
+      //   },
+      //   options: {
+      //     lineSmooth,
+      //     low: 0,
+      //     high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+      //     chartPadding: {
+      //       top: 0,
+      //       right: 0,
+      //       bottom: 0,
+      //       left: 0,
+      //     },
+      //   },
       }],
       headers: [
         {
@@ -353,39 +352,39 @@
       ],
       stats: [
         {
-          actionIcon: 'mdi-alert',
-          actionText: 'Get More Space...',
+          actionIcon: '',
+          actionText: '',
           color: '#FD9A13',
-          icon: 'mdi-sofa-single',
-          title: 'Bookings',
-          value: '184',
+          icon: 'mdi-message-question-outline',
+          title: '総質問数',
+          value: '',
         },
         {
-          actionIcon: 'mdi-tag',
-          actionText: 'Tracked from Google Analytics',
+          actionIcon: '',
+          actionText: '',
           color: 'primary',
-          icon: 'mdi-chart-bar',
-          title: 'Website Visits',
+          icon: 'mdi-podium-gold',
+          title: '最多質問',
           value: '75.521',
         },
         {
-          actionIcon: 'mdi-calendar-range',
-          actionText: 'Last 24 Hours',
+          actionIcon: '',
+          actionText: '',
           color: 'success',
-          icon: 'mdi-store',
-          title: 'Revenue',
-          value: '$34,245',
+          icon: 'mdi-message-question-outline',
+          title: '総質問数(7日間)',
+          value: '',
         },
         {
-          actionIcon: 'mdi-history',
-          actionText: 'Just Updated',
+          actionIcon: '',
+          actionText: '',
           color: 'info',
-          icon: 'mdi-twitter',
-          title: 'Followers',
+          icon: 'mdi-podium-gold',
+          title: '最多質問(７日間)',
           value: '+245',
         },
       ],
-      tabs: 0,
+      // tabs: 0,
       tasks: {
         0: [
           {
@@ -430,8 +429,140 @@
           },
         ],
       },
+      todayDate: "",
+      oneWeekAgoDate: ""
     }),
+    methods: {
+      getChartMax(max) {
+        if (max < 5) {
+          return 5;
+        } else if (max < 10) {
+          return 10;
+        } else if (max < 25) {
+          return 25;
+        } else if (max < 50) {
+          return 50;
+        } else if (max < 100) {
+          return 100;
+        }
+        return max + 100;
+      },
+      setBarGraphValue(data) {
+        var labels = [];
+        data.forEach(val => {
+          var find = labels.find(value => value.label == val.label);
+          if (find == undefined) {
+            labels.push({'label': val.label, num: 1});
+          } else {
+            find.num++;
+          }
+        });
 
+        // 数順ソート
+        labels.sort(function (a, b) {
+          return b.num - a.num;
+        });
+
+        var setLabels = [];
+        var setNum = [];
+        for (var i = 0; i < labels.length; i++) {
+          if (i >= 10) {
+            break;
+          }
+          setLabels.push(labels[i].label);
+          setNum.push(labels[i].num);
+        }
+        this.$set(this.stats[3], 'value', setLabels[0]);
+        this.$set(this.charts[0].options, 'high', this.getChartMax(setNum[0]));
+        this.$set(this.charts[0].data, 'labels', setLabels);
+        this.$set(this.charts[0].data.series, 0, setNum);
+        this.$set(this.charts[0], 'time', this.oneWeekAgoDate + ' ~ ' + this.todayDate);
+      },
+      setLineGraphValue(data) {
+        var labels = [];
+        var start = new Date(this.oneWeekAgoDate);
+        for (var i = 0; i < 7; i++) {
+          labels.push({'label': start.getMonth() + 1 + '/' + start.getDate(), 'checkDate':  start.getMonth() + 1 + '-' + start.getDate(), 'num': 0});
+          start.setDate(start.getDate() + 1);
+        }
+        labels.forEach(label => {
+          data.forEach(val => {
+            if (val.question.createdAt.indexOf(label.checkDate) > -1) {
+              label.num++;
+            }
+          });
+        });
+        var setLabels = [];
+        var setNum = [];
+        for (var i = 0; i < labels.length; i++) {
+          if (i >= 10) {
+            break;
+          }
+          setLabels.push(labels[i].label);
+          setNum.push(labels[i].num);
+        }
+
+        // 数順ソート
+        labels.sort(function (a, b) {
+          return b.num - a.num;
+        });
+        this.$set(this.charts[1].options, 'high', this.getChartMax(labels[0].num));
+        this.$set(this.charts[1].data, 'labels', setLabels);
+        this.$set(this.charts[1].data.series, 0, setNum);
+        this.$set(this.charts[1], 'time', this.oneWeekAgoDate + ' ~ ' + this.todayDate);
+      },
+      getToday() {
+        var today = new Date();
+        this.todayDate = today.getUTCFullYear() + '/' + (today.getUTCMonth() + 1) + "/" + today.getUTCDate();
+        return today.getUTCFullYear() + '-' + (today.getUTCMonth() + 1) + "-" + today.getUTCDate() + 'T23:59:59';
+      },
+      getOneWeekAgo() {
+        var today = new Date();
+        today.setDate(today.getDate() - 6);
+        this.oneWeekAgoDate = today.getUTCFullYear() + '/' + (today.getUTCMonth() + 1) + "/" + today.getUTCDate();
+        return today.getUTCFullYear() + '-' + (today.getUTCMonth() + 1) + "-" + today.getUTCDate() + 'T00:00:00';
+      },
+      getOneWeekData() {
+        var today = this.getToday();
+        var oneWeekAgo = this.getOneWeekAgo();
+        fetch('https://f6jm3ys7og.execute-api.ap-northeast-1.amazonaws.com/group7/answer?start=' + oneWeekAgo + '&end=' + today)
+        .then(response => response.text())
+        .then(data => {
+          var graphData =  JSON.parse(data);
+          this.setBarGraphValue(graphData);
+          this.setLineGraphValue(graphData);
+          this.$set(this.stats[2], 'value', String(graphData.length));
+        });
+      },
+      getAllData() {
+        fetch('https://f6jm3ys7og.execute-api.ap-northeast-1.amazonaws.com/group7/answer')
+        .then(response => response.text())
+        .then(data => {
+          var graphData =  JSON.parse(data);
+          this.$set(this.stats[0], 'value', String(graphData.length));
+          var labels = [];
+          graphData.forEach(val => {
+            var find = labels.find(value => value.label == val.label);
+            if (find == undefined) {
+              labels.push({'label': val.label, num: 1});
+            } else {
+              find.num++;
+            }
+          });
+
+          // 数順ソート
+          labels.sort(function (a, b) {
+            return b.num - a.num;
+          });
+          this.$set(this.stats[1], 'value', labels[0].label);
+        });
+      }
+    },
+    mounted() {
+      // ビュー全体がレンダリングされた後にのみ実行されるコード
+      this.getOneWeekData();
+      this.getAllData();
+    },
     computed: {
       sales: get('sales/sales'),
       totalSales () {
