@@ -47,7 +47,7 @@
         <tbody>
           <tr v-for="list in listDatas" @click="imageView(list.question.image)">
             <td><img :src=list.question.image style="width: 200px" alt=""></td>
-            <td>{{list.label}}</td>
+            <td><div style="min-width: 100px">{{list.label}}</div></td>
             <td>{{toDate(list.question.createdAt)}}</td>
           </tr>
         </tbody>
